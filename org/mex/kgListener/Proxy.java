@@ -45,6 +45,7 @@ public class Proxy {
         public void run() {
             try {
                 InputStream receive = clientSocket.getInputStream();// 读取客户端发来的数据,注意只能获取一次
+                InputStream receive_copy = new BufferedInputStream(receive);// 复制一份流,用于后续转发,因为流一旦读取,我不会再复原
                 InputStreamReader clientSocketInputStream = new InputStreamReader(receive);
                 BufferedReader bufferedReader = new BufferedReader(clientSocketInputStream);
                 bufferedReader.mark(4096); // 标记一下起始位置,以便后续重置指针
@@ -89,7 +90,7 @@ public class Proxy {
 //                }
 
                 // 创建客户端到目标主机的数据传输线程
-                Thread clientToServerThread = new Thread(new TrafficThread(bufferedReader, serverSocket2.getOutputStream()));
+                Thread clientToServerThread = new Thread(new TrafficThread(receive_copy, serverSocket2.getOutputStream()));
                 // 创建目标主机到客户端的数据传输线程
                 Thread serverToClientThread = new Thread(new TrafficThread(serverSocket2.getInputStream(), clientSocket.getOutputStream()));
 

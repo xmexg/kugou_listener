@@ -1,0 +1,120 @@
+# 非vip歌曲
+
+吕帅 - 孤牢
+发送
+POST http://kmr.service.kugou.com/v1/audio/audio?appid=1001&clienttime=1687942680&clientver=10220&dfid=0unMyC3SbU7a35qF1T0KgJFl&mid=6a7a98da48a7a9ab994ac7695ac086bf&signature=a7f5a64c9b30be428a4e04a39bfff28a&token=244ITC12Mho8l42tcY22Jl18t3oBajf2cXyy511lkN71mfwoF1QOVQJ4VPprS&userid=1038506433&uuid=2A910B062E2559DB2C0EE0CEE897DDCE HTTP/1.1
+Host: kmr.service.kugou.com
+Proxy-Connection: keep-alive
+Content-Length: 332
+Content-Type: application/json
+KG-CLIENTTIMEMS: 1687942680063
+KG-DEVID: 78A6D25D54A167060E3DCE4F175EA71B6446C8193B79ABA2C4EAAE8172CA037F4DA20933C984C6C7FEB6AE64883BD3820E7B6FFD8CDFAD7E0EEA9B3A35C2095C857FACF1B22A2201FB0879C4B01956EBC593EA898C36805E75DA87DFB29268ACEFD3671E1BA818A4D9CC07C1A15AE2916B9DABBC828C8A1D9D4CDCD5DFBE5EFC
+KG-RC: 1
+KG-Rec: 1
+KG-THash: song_language_requester.cpp:1918612240:164
+User-Agent: KuGou2012-10220-SongLanguageResquester
+x-router: kmr.service.kugou.com
+Accept-Encoding: gzip, deflate
+
+{"appid":1001,"clienttime":1687942680,"clientver":10220,"data":[{"audio_id":0,"hash":"a8b95083da924bf678ef0d2b226e6ee3"}],"dfid":"0unMyC3SbU7a35qF1T0KgJFl","key":"1261d18e45c04aaab31d72804a99b394","mid":"6a7a98da48a7a9ab994ac7695ac086bf","token":"244ITC12Mho8l42tcY22Jl18t3oBajf2cXyy511lkN71mfwoF1QOVQJ4VPprS","userid":"1038506433"}
+
+接收
+HTTP/1.1 200 OK
+Content-Length: 957
+Connection: keep-alive
+Content-Type: application/json;charset=utf-8
+Date: Wed, 28 Jun 2023 08:58:00 GMT
+Keep-Alive: timeout=4
+Kg-Bc-Ms: 8
+Proxy-Connection: keep-alive
+Server: kws
+
+{"status":1,"error_code":0,"errmsg":"","data":[{"is_recommend":"0","remark":"","timelength":"181446","audio_type":"1","timelength_ape":"0","bitrate_super":"0","audio_group_id":"237024687","filesize_high":"36064994","filesize":"2903750","audio_name":"吕帅 - 孤牢","filesize_flac":"18698798","is_publish":"1","filesize_128":"2903750","hash_flac":"E8B1298247F35B0E6D63A6778C27951E","bitrate_high":"1590","audio_id":"1043650015","filesize_ape":"0","hash":"A8B95083DA924BF678EF0D2B226E6EE3","bitrate":"128","filesize_320":"7259094","hash_320":"56E7CDEA8236565106EF5AE78856552F","timelength_128":"181446","hash_ape":"","timelength_super":"0","timelength_flac":"181395","bitrate_flac":"824","filesize_super":"0","hash_super":"","audio_group":"0","timelength_320":"181446","extname_super":"","heat":0,"language":"国语","hash_128":"A8B95083DA924BF678EF0D2B226E6EE3","hash_high":"84C9D9E0F271A4A7030222CECC2D612D","timelength_high":"181395","bitrate_ape":"0"}]}
+
+
+发送
+GET https://gateway.kugou.com/v3/url?IsFreePart=0&album_audio_id=411976851&album_id=57604057&appid=1001&area_code=1&behavior=play&cdnBackup=1&clientver=10220&cmd=24&dfid=0unMyC3SbU7a35qF1T0KgJFl&hash=a8b95083da924bf678ef0d2b226e6ee3&key=0318d20daacdcf88211ccd59f9f2c95b&mid=6a7a98da48a7a9ab994ac7695ac086bf&module=collection&page_id=1&pid=1&pidversion=3001&ppage_id=&ptype=1&signature=45f4164c97f23d53a1ed6a97779bf026&timestamp=1687942680&token=244ITC12Mho8l42tcY22Jl18t3oBajf2cXyy511lkN71mfwoF1RRg0x4S3miz&userid=1038506433&uuid=2A910B062E2559DB2C0EE0CEE897DDCE&version=10220&vipToken=&vipType=0 HTTP/1.1
+Host: gateway.kugou.com
+Connection: keep-alive
+KG-CLIENTTIMEMS: 1687942680186
+KG-DEVID: 78A6D25D54A167060E3DCE4F175EA71B6446C8193B79ABA2C4EAAE8172CA037F4DA20933C984C6C7FEB6AE64883BD3820E7B6FFD8CDFAD7E0EEA9B3A35C2095C857FACF1B22A2201FB0879C4B01956EBC593EA898C36805E75DA87DFB29268ACEFD3671E1BA818A4D9CC07C1A15AE291B1EDCE718C4BAF987BCA1ABC43728D6C
+KG-RC: 1
+User-Agent: KUGOU2012-10220-CLOUD
+x-router: tracker.kugou.com
+Accept-Encoding: gzip, deflate
+
+接收
+HTTP/1.1 200 OK
+Date: Wed, 28 Jun 2023 08:58:00 GMT
+Content-Type: text/html
+Connection: keep-alive
+Vary: Accept-Encoding
+KG-BC-MS: 17
+Server: kws
+Strict-Transport-Security: max-age=63072000
+Content-Length: 652
+
+{"trans_param":{"display_rate":0,"classmap":{"attr0":234881032},"display":0},"fileHead":100,"q":0,"status":1,"volume_gain":0,"volume_peak":-0.4,"volume":-10.8,"fileName":"\u5b64\u7262","fileSize":2903750,"backupUrl":["http:\/\/fspc.tx.kugou.com\/202306281658\/c81f78fe587993c51e32467d394f6cf8\/v3\/a8b95083da924bf678ef0d2b226e6ee3\/yp\/full\/a1001_u1038506433_d0unmyc3sbu7a35qf1t0kgjfl_p1_s1325217407.mp3"],"url":"http:\/\/fspc.hw.kugou.com\/202306281658\/32a3e267e4b78cfb441f2ecb95d028ed\/v3\/a8b95083da924bf678ef0d2b226e6ee3\/yp\/full\/a1001_u1038506433_d0unmyc3sbu7a35qf1t0kgjfl_p1_s1325217407.mp3","extName":"mp3","bitRate":128000,"timeLength":181}
+
+
+# 检查歌曲是否免费，非vip
+发送
+POST https://gateway.kugou.com/v2/get_res_privilege/lite?appid=1001&clienttime=1687942680&clientver=10220&dfid=0unMyC3SbU7a35qF1T0KgJFl&mid=6a7a98da48a7a9ab994ac7695ac086bf&token=244ITC12Mho8l42tcY22Jl18t3oBajf2cXyy511lkN71mfwoF1QOVQJ4VO7i5&userid=1038506433&uuid=2A910B062E2559DB2C0EE0CEE897DDCE HTTP/1.1
+Host: gateway.kugou.com
+Connection: keep-alive
+Content-Length: 528
+Content-Type: application/json
+KG-CLIENTTIMEMS: 1687942680309
+KG-DEVID: 78A6D25D54A167060E3DCE4F175EA71B6446C8193B79ABA2C4EAAE8172CA037F4DA20933C984C6C7FEB6AE64883BD3820E7B6FFD8CDFAD7E0EEA9B3A35C2095C857FACF1B22A2201FB0879C4B01956EBC593EA898C36805E75DA87DFB29268ACEFD3671E1BA818A4D9CC07C1A15AE291FA150D3180CC0CED71E4297F0B229D79
+KG-RC: 1
+KG-Rec: 1
+KG-THash: expand_search_manager.cpp:852736169:582
+User-Agent: KuGou2012-10220-ExpandSearchManager
+x-router: media.store.kugou.com
+Accept-Encoding: gzip, deflate
+
+{"appid":1001,"area_code":"1","behavior":"play","clientver":"10220","dfid":"0unMyC3SbU7a35qF1T0KgJFl","mid":"6a7a98da48a7a9ab994ac7695ac086bf","need_hash_offset":1,"relate":1,"resource":[{"album_audio_id":411976851,"album_id":"57604057","hash":"a8b95083da924bf678ef0d2b226e6ee3","id":0,"name":"\u5415\u5E05 - \u5B64\u7262.mp3","page_id":1,"type":"audio"}],"source":{"id":0,"module":"collection","type":"0"},"support_verify":1,"token":"244ITC12Mho8l42tcY22Jl18t3oBajf2cXyy511lkN71mfwoF1QOVQJ4VO7i5","userid":"1038506433","vip":0}
+
+接收
+HTTP/1.1 200 OK
+Date: Wed, 28 Jun 2023 08:58:00 GMT
+Content-Type: text/plain; charset=utf-8
+Connection: keep-alive
+Vary: Accept-Encoding
+KG-BC-MS: 28
+Server: kws
+Strict-Transport-Security: max-age=63072000
+Content-Length: 6311
+
+{"status":1,"error_code":0,"message":"","appid_group":32850,"should_cache":0,"data":[{"type":"audio","id":1043650015,"album_id":"57604057","recommend_album_id":"57604057","album_audio_id":411976851,"hash":"A8B95083DA924BF678EF0D2B226E6EE3","name":"吕帅 - 孤牢","singername":"吕帅","albumname":"孤牢","level":2,"quality":"128","expire":0,"publish":1,"is_publish":1,"old_hide":1,"privilege":8,"status":1,"fail_process":0,"pay_type":0,"price":0,"pkg_price":0,"topic_url":"","topic_remark":"","info":{"duration":181446,"filesize":2903750,"bitrate":128,"extname":"mp3","flag":100,"image":"http://imge.kugou.com/stdmusic/{size}/20220520/20220520144228501107.jpg","imgsize":[480,400,240,150,135,120,110,100,93,64],"intro":""},"discount":[],"start_time":"0000-00-00","end_time":"0000-00-00","cd_url":"","cid":211884831,"old_cpy":0,"rebuy_pay_type":0,"is_search_top":0,"pay_block_text":"0","is_separate":0,"buy_count":0,"buy_count_vip":0,"buy_count_kubi":0,"buy_count_audios":0,"trans_param":{"musicpack_advance":0,"pay_block_tpl":1,"display":0,"display_rate":0,"appid_block":"3124","cpy_grade":5,"cpy_level":1,"cid":211884831,"cpy_attr0":0,"classmap":{"attr0":234881032},"hash_multitrack":"834fe842666d85fe3ed6462a133135a8","qualitymap":{"attr0":49268},"language":"国语"},"_msg":"Allow: the audio is free(copyright).","_errno":0,"relate_goods":[{"type":"audio","id":1043650015,"album_id":"57604057","recommend_album_id":"0","album_audio_id":411976851,"hash":"A8B95083DA924BF678EF0D2B226E6EE3","name":"吕帅 - 孤牢","singername":"吕帅","albumname":"孤牢","level":2,"quality":"128","expire":0,"publish":1,"is_publish":1,"old_hide":1,"privilege":8,"status":1,"fail_process":0,"pay_type":0,"price":0,"pkg_price":0,"topic_url":"","topic_remark":"","info":{"duration":181446,"filesize":2903750,"bitrate":128,"extname":"mp3","flag":100,"image":"http://imge.kugou.com/stdmusic/{size}/20220520/20220520144228501107.jpg","imgsize":[480,400,240,150,135,120,110,100,93,64],"intro":""},"discount":[],"start_time":"0000-00-00","end_time":"0000-00-00","cd_url":"","cid":211884831,"old_cpy":0,"rebuy_pay_type":0,"is_search_top":0,"pay_block_text":"0","is_separate":0,"buy_count":0,"buy_count_vip":0,"buy_count_kubi":0,"buy_count_audios":0,"trans_param":{"musicpack_advance":0,"pay_block_tpl":1,"display":0,"display_rate":0,"appid_block":"3124","cpy_grade":5,"cpy_level":1,"cid":211884831,"cpy_attr0":0,"classmap":{"attr0":234881032},"hash_multitrack":"834fe842666d85fe3ed6462a133135a8","qualitymap":{"attr0":49268},"language":"国语"},"_msg":"Allow: the audio is free(copyright).","_errno":0,"relate_goods":[]},{"type":"audio","id":1043650015,"album_id":"57604057","recommend_album_id":"0","album_audio_id":411976851,"hash":"56E7CDEA8236565106EF5AE78856552F","name":"吕帅 - 孤牢","singername":"吕帅","albumname":"孤牢","level":4,"quality":"320","expire":0,"publish":1,"is_publish":1,"old_hide":1,"privilege":10,"status":0,"fail_process":12,"pay_type":3,"price":200,"pkg_price":1,"topic_url":"","topic_remark":"","info":{"duration":181446,"filesize":7259094,"bitrate":320,"extname":"mp3","flag":100,"image":"http://imge.kugou.com/stdmusic/{size}/20220520/20220520144228501107.jpg","imgsize":[480,400,240,150,135,120,110,100,93,64],"intro":""},"discount":[],"start_time":"0000-00-00","end_time":"0000-00-00","cd_url":"","cid":211884831,"old_cpy":0,"rebuy_pay_type":0,"is_search_top":0,"pay_block_text":"0","is_separate":0,"buy_count":0,"buy_count_vip":0,"buy_count_kubi":0,"buy_count_audios":0,"trans_param":{"musicpack_advance":0,"pay_block_tpl":1,"display":0,"display_rate":0,"appid_block":"3124","cpy_grade":5,"cpy_level":1,"cid":211884831,"cpy_attr0":0,"classmap":{"attr0":234881032},"hash_multitrack":"834fe842666d85fe3ed6462a133135a8","qualitymap":{"attr0":49268},"language":"国语"},"_msg":"","_errno":0,"relate_goods":[]},{"type":"audio","id":1043650015,"album_id":"57604057","recommend_album_id":"0","album_audio_id":411976851,"hash":"E8B1298247F35B0E6D63A6778C27951E","name":"吕帅 - 孤牢","singername":"吕帅","albumname":"孤牢","level":5,"quality":"flac","expire":0,"publish":1,"is_publish":1,"old_hide":1,"privilege":10,"status":0,"fail_process":12,"pay_type":3,"price":200,"pkg_price":1,"topic_url":"","topic_remark":"","info":{"duration":181395,"filesize":18698798,"bitrate":824,"extname":"flac","flag":100,"image":"http://imge.kugou.com/stdmusic/{size}/20220520/20220520144228501107.jpg","imgsize":[480,400,240,150,135,120,110,100,93,64],"intro":""},"discount":[],"start_time":"0000-00-00","end_time":"0000-00-00","cd_url":"","cid":211884831,"old_cpy":0,"rebuy_pay_type":0,"is_search_top":0,"pay_block_text":"0","is_separate":0,"buy_count":0,"buy_count_vip":0,"buy_count_kubi":0,"buy_count_audios":0,"trans_param":{"musicpack_advance":0,"pay_block_tpl":1,"display":0,"display_rate":0,"appid_block":"3124","cpy_grade":5,"cpy_level":1,"cid":211884831,"cpy_attr0":0,"classmap":{"attr0":234881032},"hash_multitrack":"834fe842666d85fe3ed6462a133135a8","qualitymap":{"attr0":49268},"language":"国语"},"_msg":"","_errno":0,"relate_goods":[]},{"type":"audio","id":1043650015,"album_id":"57604057","recommend_album_id":"0","album_audio_id":411976851,"hash":"84C9D9E0F271A4A7030222CECC2D612D","name":"吕帅 - 孤牢","singername":"吕帅","albumname":"孤牢","level":6,"quality":"high","expire":0,"publish":1,"is_publish":1,"old_hide":1,"privilege":10,"status":0,"fail_process":12,"pay_type":3,"price":200,"pkg_price":1,"topic_url":"","topic_remark":"","info":{"duration":181395,"filesize":36064994,"bitrate":1590,"extname":"flac","flag":100,"image":"http://imge.kugou.com/stdmusic/{size}/20220520/20220520144228501107.jpg","imgsize":[480,400,240,150,135,120,110,100,93,64],"intro":""},"discount":[],"start_time":"0000-00-00","end_time":"0000-00-00","cd_url":"","cid":211884831,"old_cpy":0,"rebuy_pay_type":0,"is_search_top":0,"pay_block_text":"0","is_separate":0,"buy_count":0,"buy_count_vip":0,"buy_count_kubi":0,"buy_count_audios":0,"trans_param":{"musicpack_advance":0,"pay_block_tpl":1,"display":0,"display_rate":0,"appid_block":"3124","cpy_grade":5,"cpy_level":1,"cid":211884831,"cpy_attr0":0,"classmap":{"attr0":234881032},"hash_multitrack":"834fe842666d85fe3ed6462a133135a8","qualitymap":{"attr0":49268},"language":"国语"},"_msg":"","_errno":0,"relate_goods":[]}]}],"vip_user_type":0}
+
+# 检查歌曲是否免费，vip版
+发送
+POST https://gateway.kugou.com/v2/get_res_privilege/lite?appid=1001&clienttime=1687943325&clientver=10220&dfid=0unMyC3SbU7a35qF1T0KgJFl&mid=6a7a98da48a7a9ab994ac7695ac086bf&token=244ITC12Mho8l42tcY22Jl18t3oBajf2cXyy511lkN71mfwoF0AWdkx4YGz9d&userid=1038506433&uuid=2A910B062E2559DB2C0EE0CEE897DDCE HTTP/1.1
+Host: gateway.kugou.com
+Connection: keep-alive
+Content-Length: 576
+Content-Type: application/json
+KG-CLIENTTIMEMS: 1687943325422
+KG-DEVID: 78A6D25D54A167060E3DCE4F175EA71B6446C8193B79ABA2C4EAAE8172CA037F4DA20933C984C6C7FEB6AE64883BD3820E7B6FFD8CDFAD7E0EEA9B3A35C2095C857FACF1B22A2201FB0879C4B01956EBC593EA898C36805E75DA87DFB29268ACEFD3671E1BA818A4D9CC07C1A15AE291C6C525FBC0567F1E3426DDA3D02BC99F
+KG-RC: 1
+KG-Rec: 1
+KG-THash: expand_search_manager.cpp:852736169:582
+User-Agent: KuGou2012-10220-ExpandSearchManager
+x-router: media.store.kugou.com
+Accept-Encoding: gzip, deflate
+
+{"appid":1001,"area_code":"1","behavior":"play","clientver":"10220","dfid":"0unMyC3SbU7a35qF1T0KgJFl","mid":"6a7a98da48a7a9ab994ac7695ac086bf","need_hash_offset":1,"relate":1,"resource":[{"album_audio_id":345776548,"album_id":"49917105","hash":"4cd5e871827551fb1f3bd4426bface06","id":0,"name":"\u738B\u5FFB\u8FB0\u3001\u6768\u745C\u5A77 - \u6CA6\u9677\u4E0E\u5FC3\u52A8.mp3","page_id":1,"type":"audio"}],"source":{"id":0,"module":"collection","type":"0"},"support_verify":1,"token":"244ITC12Mho8l42tcY22Jl18t3oBajf2cXyy511lkN71mfwoF0AWdkx4YGz9d","userid":"1038506433","vip":0}
+
+接收
+HTTP/1.1 200 OK
+Date: Wed, 28 Jun 2023 09:08:45 GMT
+Content-Type: text/plain; charset=utf-8
+Connection: keep-alive
+Vary: Accept-Encoding
+KG-BC-MS: 18
+Server: kws
+Strict-Transport-Security: max-age=63072000
+Content-Length: 6169
+
+{"status":1,"error_code":0,"message":"","appid_group":32850,"should_cache":0,"data":[{"type":"audio","id":125899823,"album_id":"49917105","recommend_album_id":"49917105","album_audio_id":345776548,"hash":"2749360198B66577439BD64CDF253E83","name":"王忻辰、杨瑜婷 - 沦陷与心动","singername":"王忻辰、杨瑜婷","albumname":"沦陷与心动","level":2,"quality":"128","expire":0,"publish":1,"is_publish":1,"old_hide":1,"privilege":10,"status":0,"fail_process":12,"pay_type":3,"price":200,"pkg_price":1,"topic_url":"","topic_remark":"","info":{"duration":211000,"filesize":3386089,"bitrate":128,"extname":"mp3","flag":100,"image":"http://imge.kugou.com/stdmusic/{size}/20211028/20211028110851421204.jpg","imgsize":[480,400,240,150,135,120,110,100,93,64],"intro":""},"discount":[],"start_time":"0000-00-00","end_time":"0000-00-00","cd_url":"","cid":176952785,"old_cpy":0,"rebuy_pay_type":0,"is_search_top":0,"pay_block_text":"0","is_separate":0,"buy_count":0,"buy_count_vip":0,"buy_count_kubi":0,"buy_count_audios":0,"popup":{"title":"","content":"开通会员畅享全曲，支持好音乐","btn_name":"开通会员","btn_url_ios":"","btn_url_android":"","redirect_url_h5":""},"trans_param":{"hash_offset":{"start_byte":0,"end_byte":1584138,"start_ms":39000,"end_ms":99000,"offset_hash":"535C483BE9F1B8701C76A9C0B8EDC923","file_type":0,"clip_hash":"B2B92C632E3AEA899ED8C847421B9916"},"musicpack_advance":1,"pay_block_tpl":1,"display":32,"display_rate":1,"cpy_grade":5,"cpy_level":1,"cid":176952785,"cpy_attr0":15488,"classmap":{"attr0":234885128},"hash_multitrack":"a1829bedd41f13912ddb63d6da3c7754","qualitymap":{"attr0":49204},"language":"国语"},"_msg":"","_errno":0,"relate_goods":[{"type":"audio","id":125899823,"album_id":"49917105","recommend_album_id":"0","album_audio_id":345776548,"hash":"2749360198B66577439BD64CDF253E83","name":"王忻辰、杨瑜婷 - 沦陷与心动","singername":"王忻辰、杨瑜婷","albumname":"沦陷与心动","level":2,"quality":"128","expire":0,"publish":1,"is_publish":1,"old_hide":1,"privilege":10,"status":0,"fail_process":12,"pay_type":3,"price":200,"pkg_price":1,"topic_url":"","topic_remark":"","info":{"duration":211000,"filesize":3386089,"bitrate":128,"extname":"mp3","flag":100,"image":"http://imge.kugou.com/stdmusic/{size}/20211028/20211028110851421204.jpg","imgsize":[480,400,240,150,135,120,110,100,93,64],"intro":""},"discount":[],"start_time":"0000-00-00","end_time":"0000-00-00","cd_url":"","cid":176952785,"old_cpy":0,"rebuy_pay_type":0,"is_search_top":0,"pay_block_text":"0","is_separate":0,"buy_count":0,"buy_count_vip":0,"buy_count_kubi":0,"buy_count_audios":0,"popup":{"title":"","content":"开通会员畅享全曲，支持好音乐","btn_name":"开通会员","btn_url_ios":"","btn_url_android":"","redirect_url_h5":""},"trans_param":{"hash_offset":{"start_byte":0,"end_byte":1584138,"start_ms":39000,"end_ms":99000,"offset_hash":"535C483BE9F1B8701C76A9C0B8EDC923","file_type":0,"clip_hash":"B2B92C632E3AEA899ED8C847421B9916"},"musicpack_advance":1,"pay_block_tpl":1,"display":32,"display_rate":1,"cpy_grade":5,"cpy_level":1,"cid":176952785,"cpy_attr0":15488,"classmap":{"attr0":234885128},"hash_multitrack":"a1829bedd41f13912ddb63d6da3c7754","qualitymap":{"attr0":49204},"language":"国语"},"_msg":"","_errno":0,"relate_goods":[]},{"type":"audio","id":125899823,"album_id":"49917105","recommend_album_id":"0","album_audio_id":345776548,"hash":"12BF97629F37B41AE2F5DB52164DE2E4","name":"王忻辰、杨瑜婷 - 沦陷与心动","singername":"王忻辰、杨瑜婷","albumname":"沦陷与心动","level":4,"quality":"320","expire":0,"publish":1,"is_publish":1,"old_hide":1,"privilege":10,"status":0,"fail_process":12,"pay_type":3,"price":200,"pkg_price":1,"topic_url":"","topic_remark":"","info":{"duration":211591,"filesize":8464920,"bitrate":320,"extname":"mp3","flag":100,"image":"http://imge.kugou.com/stdmusic/{size}/20211028/20211028110851421204.jpg","imgsize":[480,400,240,150,135,120,110,100,93,64],"intro":""},"discount":[],"start_time":"0000-00-00","end_time":"0000-00-00","cd_url":"","cid":176952785,"old_cpy":0,"rebuy_pay_type":0,"is_search_top":0,"pay_block_text":"0","is_separate":0,"buy_count":0,"buy_count_vip":0,"buy_count_kubi":0,"buy_count_audios":0,"popup":{"title":"","content":"开通会员畅享全曲，支持好音乐","btn_name":"开通会员","btn_url_ios":"","btn_url_android":"","redirect_url_h5":""},"trans_param":{"musicpack_advance":1,"pay_block_tpl":1,"display":32,"display_rate":1,"cpy_grade":5,"cpy_level":1,"cid":176952785,"cpy_attr0":15488,"classmap":{"attr0":234885128},"hash_multitrack":"a1829bedd41f13912ddb63d6da3c7754","qualitymap":{"attr0":49204},"language":"国语"},"_msg":"","_errno":0,"relate_goods":[]},{"type":"audio","id":125899823,"album_id":"49917105","recommend_album_id":"0","album_audio_id":345776548,"hash":"C8901836718BA34F699AAD3279DF2371","name":"王忻辰、杨瑜婷 - 沦陷与心动","singername":"王忻辰、杨瑜婷","albumname":"沦陷与心动","level":5,"quality":"flac","expire":0,"publish":1,"is_publish":1,"old_hide":1,"privilege":10,"status":0,"fail_process":12,"pay_type":3,"price":200,"pkg_price":1,"topic_url":"","topic_remark":"","info":{"duration":211541,"filesize":20592534,"bitrate":778,"extname":"flac","flag":100,"image":"http://imge.kugou.com/stdmusic/{size}/20211028/20211028110851421204.jpg","imgsize":[480,400,240,150,135,120,110,100,93,64],"intro":""},"discount":[],"start_time":"0000-00-00","end_time":"0000-00-00","cd_url":"","cid":176952785,"old_cpy":0,"rebuy_pay_type":0,"is_search_top":0,"pay_block_text":"0","is_separate":0,"buy_count":0,"buy_count_vip":0,"buy_count_kubi":0,"buy_count_audios":0,"popup":{"title":"","content":"开通会员畅享全曲，支持好音乐","btn_name":"开通会员","btn_url_ios":"","btn_url_android":"","redirect_url_h5":""},"trans_param":{"musicpack_advance":1,"pay_block_tpl":1,"display":32,"display_rate":1,"cpy_grade":5,"cpy_level":1,"cid":176952785,"cpy_attr0":15488,"classmap":{"attr0":234885128},"hash_multitrack":"a1829bedd41f13912ddb63d6da3c7754","qualitymap":{"attr0":49204},"language":"国语"},"_msg":"","_errno":0,"relate_goods":[]}]}],"vip_user_type":0}

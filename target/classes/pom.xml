@@ -8,6 +8,15 @@
     <artifactId>kugouListener</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
+    <dependencies>
+<!--        gson-->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+    </dependencies>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>

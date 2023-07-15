@@ -3,11 +3,12 @@ package org.mex.kgListener;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
- * 代理服务器
+ * 代理服务器,无用
  */
 public class Proxy {
 
@@ -18,13 +19,14 @@ public class Proxy {
             // 创建本地服务器Socket
             ServerSocket serverSocket = new ServerSocket(localPort);
             System.out.println("监听端口 " + localPort + " ...");
-
+            ExecutorService service = Executors.newFixedThreadPool(20); // 创建线程池
             while (true) {
                 // 等待客户端连接
                 Socket clientSocket = serverSocket.accept();
                 System.out.println("客户端连接成功，地址：" + clientSocket.getInetAddress().getHostAddress());
                 Thread goTun = new Thread(new Tun(clientSocket));
-                goTun.start();
+                service.execute(goTun);
+//                goTun.start();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -45,18 +47,38 @@ public class Proxy {
         public void run() {
             try {
                 InputStream receive = clientSocket.getInputStream();// 读取客户端发来的数据,注意只能获取一次
-                InputStream receive_copy = new BufferedInputStream(receive);// 复制一份流,用于后续转发,因为流一旦读取,我不会再复原
-                InputStreamReader clientSocketInputStream = new InputStreamReader(receive);
-                BufferedReader bufferedReader = new BufferedReader(clientSocketInputStream);
-                bufferedReader.mark(4096); // 标记一下起始位置,以便后续重置指针
-                String firstLine = bufferedReader.readLine();// 读取第一行
+//                byte[] bytes = new byte[2048];
+//                int len = receive.read(bytes);
+//                String result = new String(bytes, 0, len);
+//                System.out.println(result);
+ /*               InputStream receive_copy = IOUtils.toBufferedInputStream(receive);
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                byte[] buffer = new byte[1024];
+                int len;
+                while ((len = receive.read(buffer)) > -1 ) {
+                    baos.write(buffer, 0, len);
+                }
+                InputStream receive_after = new ByteArrayInputStream(baos.toByteArray());
+/*                byte[] buffer = new byte[1024];
+                int len;
+                while ((len = receive.read(buffer)) > -1 ) {
+                    baos.write(buffer, 0, len);
+                }
+                baos.flush();
+                InputStream receive_copy = new ByteArrayInputStream(baos.toByteArray());
+                InputStream receive_copy2 = new ByteArrayInputStream(baos.toByteArray());*/
+//                InputStreamReader clientSocketInputStream = new InputStreamReader(receive_copy);
+//                BufferedReader bufferedReader = new BufferedReader(clientSocketInputStream);
+//                bufferedReader.mark(4096); // 标记一下起始位置,以便后续重置指针
+/*                String firstLine = bufferedReader.readLine();// 读取第一行
+                System.out.println("首行:" + firstLine);
                 bufferedReader.reset(); // 重置指针,将指针调到行首以便后续转发流量
-                if (firstLine == null || firstLine.length() == 0) {
+/*                if (firstLine == null || firstLine.length() == 0) {
                     System.out.println("请求为空");
                     return;
                 }
                 String host = firstLine.split(" ")[1];// 获取请求的主机
-//                System.out.println("\t首行" + firstLine + "\n\thost:" + host);
+                System.out.println("\t首行" + firstLine + "\n\thost:" + host);
                 URL url = null;
                 if(firstLine.startsWith("CONNECT")) {
                     if (host.split(":").length == 2) {
@@ -75,10 +97,10 @@ public class Proxy {
                 if (remoteHost == null || remoteHost.length() == 0 ) {
                     System.out.println(" ! 请求主机为空");
                     return;
-                }
+                }*/
 
                 // 创建与目标主机之间的Socket
-                Socket serverSocket2 = new Socket(remoteHost, remotePort);
+                Socket serverSocket2 = new Socket("gateway.kugou.com", 80);
                 System.out.println("连接目标主机成功，地址：" + serverSocket2.getInetAddress());
 
 //                  //测试,用于显示服务器的响应
@@ -90,13 +112,13 @@ public class Proxy {
 //                }
 
                 // 创建客户端到目标主机的数据传输线程
-                Thread clientToServerThread = new Thread(new TrafficThread(receive_copy, serverSocket2.getOutputStream()));
+//                Thread clientToServerThread = new Thread(new TrafficThread(receive, serverSocket2.getOutputStream()));
                 // 创建目标主机到客户端的数据传输线程
-                Thread serverToClientThread = new Thread(new TrafficThread(serverSocket2.getInputStream(), clientSocket.getOutputStream()));
+//                Thread serverToClientThread = new Thread(new TrafficThread(serverSocket2.getInputStream(), clientSocket.getOutputStream()));
 
                 // 启动数据传输线程
-                clientToServerThread.start();
-                serverToClientThread.start();
+//                clientToServerThread.start();
+//                serverToClientThread.start();
             } catch (Exception e) {
                 e.printStackTrace();
                 System.out.println("连接目标主机失败");
@@ -135,7 +157,7 @@ public class Proxy {
         //把BRinput转换成InputStream
         private InputStream BRinputToInputStream() throws IOException {
             StringBuilder stringBuilder = new StringBuilder();
-            char[] buffer = new char[1024];
+            char[] buffer = new char[1024*3];
             int bufferLength;
             while ((bufferLength = BRinput.read(buffer)) != -1) {
                 stringBuilder.append(new String(buffer, 0, bufferLength));
@@ -157,20 +179,60 @@ public class Proxy {
         }
 
         private void transferByInputStream() throws IOException {
-            StringBuilder stringBuilder = new StringBuilder();
-            byte[] buffer = new byte[1024];
-            int bytesRead;
-            while ((bytesRead = input.read(buffer)) != -1) {
-                output.write(buffer, 0, bytesRead);
-                stringBuilder.append(new String(buffer, 0, bytesRead, StandardCharsets.UTF_8));
-                System.out.println("转发Stream的流量:\t" + new String(buffer, 0, bytesRead, StandardCharsets.UTF_8));
-            }
-            System.out.println("转发Stream流量:\t" + stringBuilder.toString());
+//            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+//            int bytesRead;
+//            byte[] buffer = new byte[1024*3];
+//            while ((bytesRead = input.read(buffer)) != -1) {
+//                baos.write(buffer, 0, bytesRead);
+//            }
+//            byte[] modifiedData = baos.toByteArray();
+//            output.write(modifiedData, 0, modifiedData.length);
+//            output.flush();
+
+            input.transferTo(output);
+
+//            DataInputStream in = new DataInputStream(input);
+//            DataOutputStream out = new DataOutputStream(output);
+//            int length = 0, lengthin = in.available();
+//            byte[] alldata = new byte[lengthin];
+//            for(byte i : in.readAllBytes()) {
+//                alldata[length] = i;
+//                length++;
+//            }
+////            System.out.println("转发Stream的流量长度:\t"+length+"\t"+lengthin);
+//            System.out.println("转发Stream的流量:\t" + new String(alldata));
+//            out.write(alldata, 0, lengthin);
+//            byte[] buffer = new byte[1024];
+//            int bytesRead;
+//            while ((bytesRead = in.read(buffer)) != -1) {
+//                out.write(buffer, 0, bytesRead);
+//            }
+
+//            DataInputStream in = new DataInputStream(input);
+//            System.out.println("转发Stream的流量:\t" + in.readAllBytes());
+//            byte [] one = in.readAllBytes();
+//            System.out.println("转发Stream的流量长度:\t"+one.length);
+//            output.write(one, 0, one.length);
+//            byte[] one = baos.toByteArray();
+//            byte[] two = baos.toByteArray();
+//            System.out.println(new String(two));
+//            output.write(two, 0, two.length);
+
+
+//            StringBuilder stringBuilder = new StringBuilder();
+//            byte[] buffer = new byte[1024*3];
+//            int bytesRead;
+//            while ((bytesRead = input.read(buffer)) != -1) {
+//                output.write(buffer, 0, bytesRead);
+//                stringBuilder.append(new String(buffer, 0, bytesRead, StandardCharsets.UTF_8));
+////                System.out.println("转发Stream的流量:\t" + new String(buffer, 0, bytesRead, StandardCharsets.UTF_8));
+//            }
+//            System.out.println("转发Stream流量:\t" + stringBuilder.toString());
         }
 
         private void transferByBufferedReader() {
             try {
-                char[] charStream = new char[1024];
+                char[] charStream = new char[1024*3];
                 int charsRead;
                 while ((charsRead = BRinput.read(charStream)) != -1) {
                     byte[] buffer = new String(charStream, 0, charsRead).getBytes();
@@ -179,6 +241,20 @@ public class Proxy {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
         }
+
+
+        private void transferByBufferedReader2() throws IOException {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8));
+            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(output, StandardCharsets.UTF_8));
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                bufferedWriter.write(line);
+                bufferedWriter.newLine();
+                bufferedWriter.flush();
+            }
+        }
+
     }
 }

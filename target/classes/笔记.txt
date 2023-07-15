@@ -1,3 +1,9 @@
+歌曲试听url：http://tracker.kugou.com/v3/url?IsFreePart
+把该包的歌曲url转成完整版的即可
+
+
+下文已过时
+
 歌曲转免费：
 POST /v2/get_res_privilege/lite?
 
